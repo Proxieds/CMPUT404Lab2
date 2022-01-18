@@ -1,4 +1,5 @@
 import socket
+# Import Process daemon from multiprocessing to handle multiple requests
 from multiprocessing import Process
 
 """
