@@ -1,5 +1,5 @@
 import socket
-
+from multiprocessing import Process
 
 """
 Defining global variables and setting the buffer size
@@ -31,7 +31,10 @@ def connect(addr):
         s.close()
 
 def main():
-    connect(("127.0.0.1", 8001))
+    # Start process for handling connection requests to proxy server
+    process = Process(target=connect, args=((HOST, PORT),))
+    process.start()
+    process.join()
 
 if __name__ == "__main__":
     main()

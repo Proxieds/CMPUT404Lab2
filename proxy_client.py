@@ -30,7 +30,7 @@ def connect(addr):
         s.close()
 
 def main():
-    connect(("127.0.0.1", 8001))
+    connect((HOST, PORT))
 
 if __name__ == "__main__":
     main()
